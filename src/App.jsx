@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Landing from './pages/Landing';
 import SignIn from './pages/SignIn';
 import Register from './pages/Register';
 import Chatbot from './pages/Chatbot';
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Routes>
-        <Route path="/" element={<Navigate to="/signin" replace />} />
+        <Route path="/" element={<Landing />} />
         <Route
           path="/signin"
           element={
