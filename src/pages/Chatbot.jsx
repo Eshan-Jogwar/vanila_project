@@ -179,6 +179,10 @@ export default function Chatbot() {
     }
   };
 
+  const avatarLetter = patientData?.username
+    ? patientData.username.charAt(0).toUpperCase()
+    : '?';
+
   return (
     <div className="chat-container">
       <div className="chat-header">
@@ -186,11 +190,15 @@ export default function Chatbot() {
           <div className="brain-icon">🧠</div>
           <div className="header-info">
             <h2>NeuroAssist</h2>
-            <p className="status">AI Medical Assistant</p>
+            <p className="status">
+              <span className="status-dot" />
+              AI Medical Assistant
+            </p>
           </div>
         </div>
         <div className="header-right">
           <div className="user-info">
+            <div className="user-avatar">{avatarLetter}</div>
             <span>{patientData?.username || 'Loading...'}</span>
           </div>
           <button className="logout-btn" onClick={logout}>
@@ -269,10 +277,12 @@ export default function Chatbot() {
             </button>
           </div>
         </form>
-        <p className="disclaimer">
-          AI responses are for informational purposes only. Consult healthcare
-          professionals for medical advice.
-        </p>
+        <div className="disclaimer-bar">
+          <span className="disclaimer-icon">⚕️</span>
+          <p>
+            AI responses are for informational purposes only. Consult healthcare professionals for medical advice.
+          </p>
+        </div>
       </div>
     </div>
   );
