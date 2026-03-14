@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-body, html, #root {
-  height: 100%;
-  overflow: hidden;
-}
-
 .chat-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
