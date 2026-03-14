@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroAssist - Chat</title>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="brain-icon">🧠</div>
+                <div class="header-info">
+                    <h2>NeuroAssist</h2>
+                    <p class="status">AI Medical Assistant</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-info" id="userInfo">
+                    <span id="username">Loading...</span>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be loaded here -->
+            <div class="loading-messages">
+                <div class="spinner"></div>
+                <p>Loading chat history...</p>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-area">
+            <form id="chatForm">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="Ask me about brain tumors, treatments, symptoms..." 
+                        rows="1"
+                        required
+                    ></textarea>
+                    <button type="submit" id="sendBtn">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+            </form>
+            <p class="disclaimer">AI responses are for informational purposes only. Consult healthcare professionals for medical advice.</p>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

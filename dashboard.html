@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 { color: #667eea; }
+        .info { margin: 10px 0; }
+        .label { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>✅ Registration Successful!</h1>
+        <div id="patientInfo"></div>
+        <button onclick="localStorage.clear(); window.location.href='register.html'">Logout</button>
+    </div>
+
+    <script>
+        const patientData = JSON.parse(localStorage.getItem('patient_data'));
+        const token = localStorage.getItem('auth_token');
+        
+        if (!patientData || !token) {
+            window.location.href = 'register.html';
+        }
+        
+        document.getElementById('patientInfo').innerHTML = `
+            <div class="info"><span class="label">Username:</span> ${patientData.username}</div>
+            <div class="info"><span class="label">Email:</span> ${patientData.email || 'N/A'}</div>
+            <div class="info"><span class="label">Tumor Type:</span> ${patientData.tumor_type}</div>
+            <div class="info"><span class="label">City:</span> ${patientData.city || 'N/A'}</div>
+            <div class="info"><span class="label">Token:</span> ${token.substring(0, 30)}...</div>
+        `;
+    </script>
+</body>
+</html>

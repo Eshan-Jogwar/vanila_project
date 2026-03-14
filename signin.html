@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Brain Tumor Detection</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Sign in to continue your consultation</p>
+
+    <form id="signinForm">
+      <input type="email" name="email" id="email" placeholder="Email" required>
+      <input type="password" name="password" id="password" placeholder="Password" required>
+
+      <div class="error-message" id="errorMessage"></div>
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p id="loadingText">Signing in...</p>
+      </div>
+
+      <button type="submit" id="submitBtn">Sign In</button>
+    </form>
+
+    <div class="register-link">
+      Don't have an account? <a href="register.html">Register</a>
+    </div>
+  </div>
+
+  <script src="signin.js"></script>
+</body>
+</html>
